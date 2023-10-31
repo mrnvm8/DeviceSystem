@@ -1,0 +1,97 @@
+@model IEnumerable<DeviceLoanResponse>
+@{
+    ViewData["Title"] = "Details and History";
+
+    decimal CalcDepreciation(decimal purchasedPrice, DateTime purchasedDate)
+    {
+        const decimal _percentage = 0.333m;
+        var _passedYear = DateTime.Now.Year - purchasedDate.Year;
+        var _depreciationPrice = (purchasedPrice - (purchasedPrice * _percentage)) / 3;
+
+        for (int i = 1; i <= _passedYear; i++)
+        {
+            purchasedPrice = purchasedPrice - _depreciationPrice;
+            if (i == 3) break;
+        }
+
+        return purchasedPrice;
+    }
+}
+
+<h3 class="page-header">Device More Details</h3>
+<div class="row mb-2">
+    <p>
+        <a class="btn btn-info btn-shape mx-2" asp-controller="Devices" asp-action="DeviceSummary">Device
+            Summary</a>
+    </p>
+    <div class="table-responsive custom-table-responsive mx-auto">
+
+        <table class="table custom-table">
+            <thead class="text-center">
+                <tr>
+                    <th>Type</th>
+                    <th>Device name</th>
+                    <th>Department</th>
+                    <th>Identity Number</th>
+                    <th>PURCHASE PRICE</th>
+                    <th>PURCHASE DATE</th>
+                    <th>Depreciation Current price</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                <tr class="spacer">
+                    <td colspan="100"></td>
+                </tr>
+                <td>@ViewBag.Device.TypeName</td>
+                <td>@ViewBag.Device.DeviceName</td>
+                <td>@ViewBag.Device.DepartmentName</td>
+                <td>@ViewBag.Device.IdentityNumber</td>
+                <td>R @ViewBag.Device.PurchasedPrice</td>
+                <td>@ViewBag.Device.PurchasedDate.ToString("yyyy-MM-dd")</td>
+                <td>R @CalcDepreciation(ViewBag.Device.PurchasedPrice, ViewBag.Device.PurchasedDate).ToString("N2")
+                    <span class="badge" style="color:green; font-size:12px;">(With 33.3%)</span>
+                </td>
+            </tbody>
+        </table>
+        @if (Model is null || Model.Any() == false)
+        {
+            <h3 class="page-header">Loan History Of The Devices</h3>
+            <p class="text-center">
+                Currently not Available
+            </p>
+        }
+        else
+        {
+            <!----Loan History---->
+            <h3 class="page-header">Loan History Of The Devices</h3>
+            <table class="table custom-table" id="fresh-table">
+                <thead class="text-center">
+                    <tr>
+                        <th>Assigned To</th>
+                        <th>Whe ?</th>
+                        <th>Until ?</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr class="spacer">
+                        <td colspan="100"></td>
+                    </tr>
+                    @foreach (var device in Model)
+                    {
+                        //I don't want the currently assigned info
+                        if (device.ReturnDate == DateTime.Parse("2009-01-01"))
+                        {
+                            continue;
+                        }
+
+                        <tr>
+                            <td>@device.EmployeeName</td>
+                            <td>@device.AssignedDate.ToString("yyyy-MM-dd")</td>
+                            <td>@DateTime.Parse(device.ReturnDate.ToString()!).ToString("yyyy-MM-dd")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>

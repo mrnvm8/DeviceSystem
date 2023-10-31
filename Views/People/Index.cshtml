@@ -1,0 +1,57 @@
+﻿@model IEnumerable<PersonResponse>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+@if(Model is null || Model.Any() ==false){
+    <a class="btn btn-info btn-shape mt-5" asp-controller="Home" asp-action="Index">Main Menu</a>
+    <div class="alert alert-info text-center p-5 my-5">
+        <h4>@ViewBag.Error</h4>
+        <h6>
+            <a asp-action="Create">Click here to create a person</a>
+        </h6>
+    </div>
+}
+else
+{
+    <h2 class="page-header">List of People</h2>
+    <div class="row mb-2">
+        <div class="custom-table-responsive mx-auto">
+            <p>
+                <a class="btn btn-primary btn-shape" asp-action="Create">Create New</a>
+                <a class="btn btn-info btn-shape mx-2" asp-controller="Home" asp-action="Index">Main Menu</a>
+            </p>
+             <table id="fresh-table" class="table custom-table">
+                <thead class="text-center">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+                        <th>@Html.DisplayNameFor(model => model.LastName)</th>
+                        <th>@Html.DisplayNameFor(model => model.Gender)</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    @foreach (var item in Model) {
+                        <tr class="spacer"><td colspan="100"></td></tr>
+                        <tr>
+                           <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+                           <td>@Html.DisplayFor(modelItem => item.LastName)</td>
+                           <td>@item.Gender.ToString().ToUpper()</td>
+                           <td>
+                                <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a> |
+                                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.Id">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                           </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+
