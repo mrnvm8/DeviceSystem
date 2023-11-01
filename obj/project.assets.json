@@ -2471,11 +2471,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/lindokuhle/Documents/NET/ASP.NET MVC/DeviceSystem/DeviceSystem.csproj",
+      "projectUniqueName": "/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/DeviceSystem.csproj",
       "projectName": "DeviceSystem",
-      "projectPath": "/home/lindokuhle/Documents/NET/ASP.NET MVC/DeviceSystem/DeviceSystem.csproj",
+      "projectPath": "/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/DeviceSystem.csproj",
       "packagesPath": "/home/lindokuhle/.nuget/packages/",
-      "outputPath": "/home/lindokuhle/Documents/NET/ASP.NET MVC/DeviceSystem/obj/",
+      "outputPath": "/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/lindokuhle/.nuget/NuGet/NuGet.Config"

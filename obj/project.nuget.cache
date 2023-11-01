@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QoJiJ3v9Yc3+MoG0cdrR4GZFi8Qk6j8jgjzHHZX1JvUYncLvmROBhDgCAt9LSSg733LRr8BHGEJU/pdsAO3pBA==",
+  "dgSpecHash": "xiocxGXTUe/vg79MZ+GZhLjp66z+DQJk3cGfUXPjQzFjK7HTj7YKdur64BJ8JVF1t33YXX/bgmIBSR50sLtRcA==",
   "success": true,
-  "projectFilePath": "/home/lindokuhle/Documents/NET/ASP.NET MVC/DeviceSystem/DeviceSystem.csproj",
+  "projectFilePath": "/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/DeviceSystem.csproj",
   "expectedPackageFiles": [
     "/home/lindokuhle/.nuget/packages/bouncycastle.cryptography/2.2.1/bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "/home/lindokuhle/.nuget/packages/google.protobuf/3.21.9/google.protobuf.3.21.9.nupkg.sha512",
