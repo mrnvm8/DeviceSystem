@@ -1,9 +1,14 @@
-using System;
 using DeviceSystem.Mapping;
 using DeviceSystem.Repositories.TicketRepository;
 using DeviceSystem.Requests.Ticket;
 using DeviceSystem.Services.AuthService;
+using DeviceSystem.Services.DeviceService;
 using DeviceSystem.Services.EmployeeService;
+using MailKit.Net.Smtp;
+using MailKit.Security;
+using MimeKit;
+using MimeKit.Text;
+
 
 namespace DeviceSystem.Services.TicketService
 {
@@ -12,14 +17,19 @@ namespace DeviceSystem.Services.TicketService
         private readonly ITicketRepository _ticketRepository;
         private readonly IAuthService _authService;
         private readonly IEmployeeService _employeeService;
+        private readonly IDeviceService _deviceService;
+        private readonly IConfiguration _config;
 
         public TicketService(ITicketRepository ticketRepository,
         IAuthService authService,
-        IEmployeeService employeeService)
+        IEmployeeService employeeService,
+        IDeviceService deviceService, IConfiguration config)
         {
             _ticketRepository = ticketRepository;
             _authService = authService;
             _employeeService = employeeService;
+            _deviceService = deviceService;
+            _config = config;
         }
 
         public async Task<ServiceResponse<bool>> AddTicket(CreateTicketRequest request)
@@ -43,6 +53,7 @@ namespace DeviceSystem.Services.TicketService
                 var affected = await _ticketRepository.AddTicket(ticket);
                 if (affected == 1)
                 {
+                    SendTicketEmail(await ComposeEmailDetails(ticket));
                     return response;
                 }
                 else
@@ -243,5 +254,43 @@ namespace DeviceSystem.Services.TicketService
                 }
             }
         }
+
+        private async Task<EmailResponse> ComposeEmailDetails(Ticket ticket)
+        {
+            var EmailContext = new EmailResponse();
+            var employee = (await _employeeService.GetEmployeeById(_authService.GetEmployeeId())).Data;
+            var device = (await _deviceService.GetDeviceById(ticket.DeviceId)).Data;
+
+            if (employee is not null && device is not null)
+            {
+                EmailContext.Subject = ticket.TicketTitle!;
+                EmailContext.Body = $"Good day Tech Team <br/>" +
+                                    $"<br/>I have created a Ticket about work device :<br/>" +
+                                    $"<b>Device Name:</b> {device.DeviceName}<br/>" +
+                                    $"<b>Identity Number:</b> {device.IdentityNumber}<br/>" +
+                                    $"<h4>Here is the Issue:</h4>{ticket.TicketIssue}" +
+                                    $"<br/><br/>Best regards<br/> {employee!.FullName}";
+
+                EmailContext.Email = "techservices@axiumeducation.org";
+            }
+
+            return EmailContext;
+        }
+
+        public void SendTicketEmail(EmailResponse request)
+        {
+            var email = new MimeMessage();
+            email.From.Add(MailboxAddress.Parse(this._config.GetSection("EmailUsername").Value));
+            email.To.Add(MailboxAddress.Parse(request.Email));
+            email.Subject = request.Subject;
+            email.Body = new TextPart(TextFormat.Html) { Text = request.Body };
+
+            using var smtp = new SmtpClient();
+            smtp.Connect(_config.GetSection("EmailHost").Value, 587, SecureSocketOptions.StartTls);
+            smtp.Authenticate(_config.GetSection("EmailUsername").Value, _config.GetSection("EmailPassword").Value);
+            smtp.Send(email);
+            smtp.Disconnect(true);
+        }
     }
 }
+
