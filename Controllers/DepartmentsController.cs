@@ -47,6 +47,7 @@ namespace DeviceSystem.Controllers
         }
 
         // POST: Departments/Create
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("OfficeId,DepartmentName,Description")] CreateDepartmentRequest request)
         {

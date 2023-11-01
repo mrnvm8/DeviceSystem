@@ -23,6 +23,8 @@ namespace DeviceSystem.Services.AuthService
 
         public Guid GetEmployeeId() => Guid.Parse(_httpContextAccessor.HttpContext!.User
                    .FindFirstValue(ClaimTypes.Name)!);
+        public Guid GetUserId() => Guid.Parse(_httpContextAccessor.HttpContext!.User
+                   .FindFirstValue(ClaimTypes.NameIdentifier)!);
         public string GetUserRole() => _httpContextAccessor.HttpContext!.User
                    .FindFirstValue(ClaimTypes.Role)!;
         public async Task<ServiceResponse<UserResponse>> Login(string email, string password)

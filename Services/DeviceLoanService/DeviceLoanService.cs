@@ -62,7 +62,7 @@ namespace DeviceSystem.Services.DeviceLoanService
             //Get the list of devices loan
             var deviceloans = await _deviceLoanRepository.GetAllAsync();
 
-            if (deviceloans.Any() == false)
+            if (deviceloans.Count() == 0)
             {
                 //if there are no devices loan in the database
                 response.Success = false;

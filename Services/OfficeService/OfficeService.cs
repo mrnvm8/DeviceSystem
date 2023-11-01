@@ -71,7 +71,7 @@ namespace DeviceSystem.Services.OfficeService
             //Get the list of office
             var offices = await _officeRepository.GetAllAsync();
 
-            if (offices.Any() == false)
+            if (offices.Count() == 0)
             {
                 //if there are no people in the database
                 response.Success = false;

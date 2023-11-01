@@ -52,7 +52,7 @@ namespace DeviceSystem.Services.PersonService
             //Get the list of people
             var _people = await _peopleRepository.GetPeopleAsync();
 
-            if (_people is null)
+            if (_people.Count() == 0)
             {
                 //if there are no people in the database
                 response.Success = false;

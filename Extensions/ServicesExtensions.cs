@@ -19,6 +19,8 @@ using DeviceSystem.Services.OfficeService;
 
 
 using Microsoft.AspNetCore.Authentication.Cookies;
+using DeviceSystem.Repositories.TicketRepository;
+using DeviceSystem.Services.TicketService;
 
 namespace DeviceSystem.Extensions
 {
@@ -34,6 +36,7 @@ namespace DeviceSystem.Extensions
             services.AddScoped<IDeviceTypeRepository, DeviceTypeRepository>();
             services.AddScoped<IDeviceLoanRepository, DeviceLoanRepository>();
             services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddScoped<ITicketRepository, TicketRepository>();
 
             services.AddScoped<IPeopleService, PeopleService>();
             services.AddScoped<IEmployeeService, EmployeeService>();
@@ -43,7 +46,8 @@ namespace DeviceSystem.Extensions
             services.AddScoped<IDeviceTypeService, DeviceTypeService>();
             services.AddScoped<IDeviceLoanService, DeviceLoanService>();
             services.AddScoped<IAuthService, AuthService>();
-            
+            services.AddScoped<ITicketService, TicketService>();
+
             return services;
         }
 

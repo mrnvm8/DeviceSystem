@@ -107,7 +107,7 @@ namespace DeviceSystem.Services.DeviceService
                 }
             }
 
-            if (_devices is null)
+            if (_devices.Count() == 0)
             {
                 //if there are no devices in the database
                 response.Success = false;

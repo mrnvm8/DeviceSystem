@@ -84,7 +84,7 @@ namespace DeviceSystem.Services.EmployeeService
 
             var _employees = await _employeeRespository.GetEmployeesAsync();
             
-            if (_employees is null)
+            if (_employees.Count() == 0)
             {
                 //if there are no employee in the database
                 response.Success = false;

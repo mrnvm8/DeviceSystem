@@ -111,7 +111,7 @@ namespace DeviceSystem.Services.DepartmentService
                 }
             }
 
-            if (departments is null)
+            if (departments.Count() == 0)
             {
                 //if there are nodepartment in the database
                 response.Success = false;

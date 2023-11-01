@@ -15,9 +15,11 @@
         public virtual DeviceType? DeviceType { get; set; }
         public virtual Department? Department { get; set; }
         public virtual ICollection<DeviceLoans> DevicesLoans { get; set; }
+        public virtual ICollection<Ticket> Tickets { get; set; }
         public Device()
         {
             DevicesLoans = new HashSet<DeviceLoans>();
+            Tickets = new HashSet<Ticket>();
         }
     }
 }

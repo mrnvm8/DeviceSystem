@@ -10,6 +10,11 @@
         public DateTime DateCreated { get; init; } 
         public virtual Employee? Employee { get; set; }
         public virtual ICollection<DeviceLoans> DevicesLoans { get; set; }
-        public User() => DevicesLoans = new HashSet<DeviceLoans>();
+        public virtual ICollection<Ticket> Tickets { get; set; }
+        public User()
+        {
+            DevicesLoans = new HashSet<DeviceLoans>();
+            Tickets = new HashSet<Ticket>();
+        } 
     }
 }
