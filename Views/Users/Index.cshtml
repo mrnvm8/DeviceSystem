@@ -1,0 +1,64 @@
+﻿@model IEnumerable<UserResponse>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+@if (Model is null || Model.Any() == false)
+{
+    <a class="btn btn-info btn-shape mt-5" asp-controller="Home" asp-action="Index">Main Menu</a>
+    <div class="alert alert-info text-center p-5 my-5">
+    <h4>@ViewBag.Error</h4>
+        <h6>
+            <a asp-action="Register">Click here to create a login</a>
+        </h6>
+    </div>
+}
+else
+{
+    <h2 class="page-header">List of User</h2>
+    <div class="row mb-2">
+    <div class="custom-table-responsive mx-auto">
+        <p>
+            <a class="btn btn-primary btn-shape" asp-action="Register">Register User</a>
+            <a class="btn btn-info btn-shape mx-2" asp-controller="Home" asp-action="Index">Main Menu</a>
+        </p>
+        <table id="fresh-table" class="table custom-table">
+            <thead class="text-center">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.FullName)</th>
+                    <th>@Html.DisplayNameFor(model => model.Email)</th>
+                    <th>@Html.DisplayNameFor(model => model.Department)</th>
+                    <th>@Html.DisplayNameFor(model => model.Office)</th>
+                    <th>@Html.DisplayNameFor(model => model.Role)</th>
+                    <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    @foreach (var item in Model)
+                    {
+                        <tr class="spacer">
+                            <td colspan="100"></td>
+                        </tr>
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.FullName)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Department)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Office)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Role)</td>
+                            <td>
+                                <a class="btn btn-primary btn-sm" asp-action="PasswordChange" asp-route-id="@item.UserId">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a> |
+                                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.UserId">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}

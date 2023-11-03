@@ -1,4 +1,5 @@
 using DeviceSystem.Mapping;
+using DeviceSystem.Repositories.DeviceLoanRepository;
 using DeviceSystem.Repositories.EmployeeRespository;
 using DeviceSystem.Requests.Employee;
 using DeviceSystem.Services.AuthService;
@@ -10,13 +11,16 @@ namespace DeviceSystem.Services.EmployeeService
 
         private readonly IEmployeeRespository _employeeRespository;
         private readonly IAuthService _authService;
+        private readonly IDeviceLoanRepository _deviceLoanRepository;
 
         // private readonly IDeviceLoanRepository _deviceLoanRepository;
         public EmployeeService(IEmployeeRespository employeeRespository,
-         IAuthService authService)
+         IAuthService authService, 
+         IDeviceLoanRepository deviceLoanRepository)
         {
             _employeeRespository = employeeRespository;
             _authService = authService;
+            _deviceLoanRepository = deviceLoanRepository;
         }
 
         public async Task<ServiceResponse<bool>> CreateEmployee(CreateEmployeeRequest request)
@@ -50,9 +54,26 @@ namespace DeviceSystem.Services.EmployeeService
             }
         }
 
-        public Task<ServiceResponse<IEnumerable<DeviceLoanResponse>>> GetDeviceLoanById(Guid employeeId)
+        public async Task<ServiceResponse<IEnumerable<DeviceLoanResponse>>> GetDeviceLoanById(Guid employeeId)
         {
-            throw new NotImplementedException();
+            var response = new ServiceResponse<IEnumerable<DeviceLoanResponse>>();
+            // Get the employee from the database by Id
+            var deviceLoans = await _deviceLoanRepository.GetDeviceLoansByEmployeeId(employeeId);
+
+            if (deviceLoans.Count() ==0)
+            {
+                //if the employee is not in the database then return false and error message
+                response.Success = false;
+                response.Message = "There is no device loaned to this employee yet.";
+                return response;
+            }
+            else
+            {
+                //if the device loan is in the database then map it to DTO 
+                //and  return device loan Dto information
+                response.Data = deviceLoans.Select(x => x!.MapToDeviceLoanResponse());
+                return response;
+            }
         }
 
         public async Task<ServiceResponse<EmployeeResponse>> GetEmployeeById(Guid employeeId)

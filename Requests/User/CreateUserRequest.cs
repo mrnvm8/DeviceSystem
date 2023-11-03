@@ -6,7 +6,7 @@ namespace DeviceSystem.Requests.User
     {
         public Guid EmployeeId { get; set; }
 
-        [Required, StringLength(100, MinimumLength = 6)]
+        [Required, StringLength(15, MinimumLength = 8)]
         public string Password { get; set; } = string.Empty;
 
         [Compare("Password", ErrorMessage = "The passwords do not match."),

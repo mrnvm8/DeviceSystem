@@ -9,15 +9,17 @@
             _context = context;
         }
 
-        public async Task<List<Department>> GetAllAsync() => await _context.Departments!
-                                                                    .Include(o => o.Offices)
-                                                                    .AsNoTracking()
-                                                                    .ToListAsync();
+        public async Task<List<Department>> GetAllAsync() =>
+         await _context.Departments!
+                .Include(o => o.Offices)
+                .AsNoTracking()
+                .ToListAsync();
 
-        public async Task<Department?> GetByIdAsync(Guid id) => await _context.Departments!
-                                                                .Include(o => o.Offices)
-                                                                .AsNoTracking()
-                                                                .FirstOrDefaultAsync(o => o.Id == id);
+        public async Task<Department?> GetByIdAsync(Guid id) =>
+            await _context.Departments!
+                .Include(o => o.Offices)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(o => o.Id == id);
 
         public async Task<int> CreateAsync(Department department)
         {
@@ -60,6 +62,6 @@
                  && x.OfficeId.Equals(department.OfficeId)
                 && x.Description.ToLower().Equals(department.Description.ToLower()));
         }
- 
+
     }
 }

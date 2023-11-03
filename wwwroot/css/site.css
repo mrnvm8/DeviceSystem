@@ -404,3 +404,13 @@ label {
 .form-content .form-detail input:focus {
   border: 2px solid #999;
 }
+
+.container-fluid{
+ max-width: 80%;
+}
+.username {
+  color: green;
+  font-size: 15px;
+  padding-top: 10px;
+  font-style: italic;
+}

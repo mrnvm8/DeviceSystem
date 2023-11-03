@@ -21,6 +21,17 @@ namespace DeviceSystem.Controllers
             _employeeService = employeeService;
         }
 
+        public async Task<IActionResult> Index()
+        {
+            var result = await _authService.GetUsersFromDB();
+            if (result.Data == null)
+            {
+                ViewBag.Error = result.Message;
+            }
+            return View(result.Data);
+        }
+
+
         // GET: User Login Page
         [AllowAnonymous]
         public IActionResult Login()
@@ -104,13 +115,79 @@ namespace DeviceSystem.Controllers
                 {
                     return RedirectToAction("Index", "Home");
                 }
-                ViewBag.Error = result.Message;
+                //convering the string to array of error message
+                ViewBag.Error = result.Message!.Split(",").Reverse();
             }
             else
             {
                 ViewBag.Error = "Invalid Information";
             }
             return View();
+        }
+
+        public IActionResult PasswordChange(Guid id)
+        {
+            return View();
+        }
+
+        // POST: Users/passwordChange
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> PasswordChange(Guid id, [Bind("Password,ConfirmPassword")] ChangePasswordRequest request)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _authService.ChangeUserPassword(id, request.Password);
+                if (result.Success)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                //convering the string to array of error message
+                ViewBag.Error = result.Message!.Split(",").Reverse();
+            }
+            else
+            {
+                ViewBag.Error = "Invalid Information";
+            }
+            return View();
+        }
+
+        public async Task<IActionResult> Delete(Guid id)
+        {
+
+            if (id == Guid.Empty)
+            {
+                ViewBag.Error = "Invalid Id";
+                return View();
+            }
+
+            var result = await _authService.GetUserById(id);
+            if (!result.Success)
+            {
+                ViewBag.Error = result.Message;
+                return View();
+            }
+            return View(result.Data);
+        }
+
+        // POST: DeviceTypes/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(Guid id)
+        {
+            if (id == Guid.Empty)
+            {
+                ViewBag.Error = "Invalid Id";
+                return View();
+            }
+
+            var result = await _authService.RemoveUser(id);
+            if (!result.Success)
+            {
+                ViewBag.Error = result.Message;
+                return View();
+            }
+            return RedirectToAction(nameof(Index));
         }
     }
 }
