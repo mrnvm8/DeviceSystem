@@ -53,6 +53,7 @@ namespace DeviceSystem.Services.TicketService
                 var affected = await _ticketRepository.AddTicket(ticket);
                 if (affected == 1)
                 {
+                    //sending the email to the user
                     SendTicketEmail(await ComposeEmailDetails(ticket));
                     return response;
                 }
@@ -237,13 +238,16 @@ namespace DeviceSystem.Services.TicketService
                     FixedDate = DateTime.Now,
                     TicketSolution = ticket.TicketSolution,
                     IssueSolved = true,
-
                 };
 
                 //if the ticket exist delete the person
                 var affected = await _ticketRepository.UpdateTicket(dbTicket);
                 if (affected == 1)
                 {
+                    //sending email when finished
+                    //get the employee who created the ticket
+                    var ticketCreator = await _authService.GetUserById(dbTicket.UserId);
+                    SendTicketEmail(await ArchiveEmailDetails(ticketCreator.Data!, dbTicket));
                     return response;
                 }
                 else
@@ -273,6 +277,24 @@ namespace DeviceSystem.Services.TicketService
 
                 EmailContext.Email = "techservices@axiumeducation.org";
             }
+
+            return EmailContext;
+        }
+
+        private async Task<EmailResponse> ArchiveEmailDetails(UserResponse user, Ticket ticket)
+        {
+            var EmailContext = new EmailResponse();
+            var employee = (await _employeeService.GetEmployeeById(_authService.GetEmployeeId())).Data;
+            var device = (await _deviceService.GetDeviceById(ticket.DeviceId)).Data;
+
+            EmailContext.Subject = ticket.TicketTitle!;
+            EmailContext.Body = $"<h4> Good Day {user.FullName}</h4>" +
+                                $"<p>I have Looked at the Ticket Title: {ticket.TicketTitle}</p>" +
+                                $"<br><h4>Here is the Ticket Solution(s):<h/4><br>" +
+                                $"<p>{ticket.TicketSolution}<p>" +
+                                $"<br><br> Best regards <br> {employee!.FullName}";
+
+            EmailContext.Email = user.Email;
 
             return EmailContext;
         }

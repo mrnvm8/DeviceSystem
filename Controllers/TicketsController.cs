@@ -28,6 +28,16 @@ namespace DeviceSystem.Controllers
             return View(result.Data);
         }
 
+        public async Task<IActionResult> Details(Guid id)
+        {
+            var result = await _ticketService.GetTicketById(id);
+            if (result.Data == null)
+            {
+                ViewBag.Error = result.Message;
+            }
+            return View(result.Data);
+        }
+
         public IActionResult Create(Guid id)
         {
             var Devices = (_deviceService.GetDevices().Result).Data;
