@@ -4,6 +4,7 @@ global using Microsoft.EntityFrameworkCore;
 global using DeviceSystem.Requests.User;
 global using DeviceSystem.Response_DTO_;
 using DeviceSystem.Extensions;
+using System.Net;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,27 +18,42 @@ builder.Services.AddDatabase(_settings!.ConnectionString);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
 //Add authentication cookies
 builder.Services.AddApplicationAuthentication();
-
 //Add application Repositories and Services
 builder.Services.AddApplication();
-
 //for accessing HttpContext 
 builder.Services.AddHttpContextAccessor();
+
+
+if (!builder.Environment.IsDevelopment())
+{
+    //HTTP Strict Transport Security Protocol (HSTS)
+    builder.Services.EnforceHTTPSHsts();
+
+    //Configure permanent redirects in production
+    builder.Services.AddHttpsRedirection(options =>
+    {
+        options.RedirectStatusCode = (int)HttpStatusCode.PermanentRedirect;
+        options.HttpsPort = 443;
+    });
+}
+
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
+    //Deactivate HTTPS Redirection Middleware in the Development environment
+    app.UseHttpsRedirection();
+
     app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseRouting();

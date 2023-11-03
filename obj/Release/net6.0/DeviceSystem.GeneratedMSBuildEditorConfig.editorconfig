@@ -1,0 +1,228 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = DeviceSystem
+build_property.RootNamespace = DeviceSystem
+build_property.ProjectDir = /home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem
+build_property._RazorSourceGeneratorDebug = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Departments/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGVwYXJ0bWVudHMvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Departments/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGVwYXJ0bWVudHMvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Departments/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGVwYXJ0bWVudHMvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Departments/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGVwYXJ0bWVudHMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/DeviceLoans/Assign.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGV2aWNlTG9hbnMvQXNzaWduLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/DeviceLoans/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGV2aWNlTG9hbnMvRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/DeviceLoans/Unassign.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGV2aWNlTG9hbnMvVW5hc3NpZ24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Devices/AllDevices.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGV2aWNlcy9BbGxEZXZpY2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Devices/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGV2aWNlcy9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Devices/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGV2aWNlcy9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Devices/DeviceSummary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGV2aWNlcy9EZXZpY2VTdW1tYXJ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Devices/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGV2aWNlcy9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Devices/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGV2aWNlcy9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/DeviceTypes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGV2aWNlVHlwZXMvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/DeviceTypes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGV2aWNlVHlwZXMvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/DeviceTypes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGV2aWNlVHlwZXMvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/DeviceTypes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGV2aWNlVHlwZXMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Employees/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWVzL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Employees/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWVzL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Employees/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWVzL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Employees/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWVzL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Employees/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWVzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Home/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Home/Menu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9NZW51LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Home/Settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9TZXR0aW5ncy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Offices/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT2ZmaWNlcy9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Offices/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT2ZmaWNlcy9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Offices/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT2ZmaWNlcy9EZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Offices/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT2ZmaWNlcy9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Offices/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT2ZmaWNlcy9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/People/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVvcGxlL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/People/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVvcGxlL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/People/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVvcGxlL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/People/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVvcGxlL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/People/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVvcGxlL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Tickets/AcknowledgeTicket.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGlja2V0cy9BY2tub3dsZWRnZVRpY2tldC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Tickets/ArchiveTicket.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGlja2V0cy9BcmNoaXZlVGlja2V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Tickets/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGlja2V0cy9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Tickets/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGlja2V0cy9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Tickets/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGlja2V0cy9EZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Tickets/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGlja2V0cy9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Users/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Users/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Users/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Users/PasswordChange.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvUGFzc3dvcmRDaGFuZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Users/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/lindokuhle/Documents/Programming/NET/ASP.NET MVC/DeviceSystem/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-6srpj03xdt

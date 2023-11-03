@@ -80,5 +80,18 @@ namespace DeviceSystem.Extensions
 
             return services;
         }
+
+        public static IServiceCollection EnforceHTTPSHsts(this IServiceCollection services)
+        {
+            services.AddHsts(options =>
+            {
+                options.Preload = true;
+                options.IncludeSubDomains = true;
+                options.MaxAge = TimeSpan.FromDays(60);
+                options.ExcludedHosts.Add("example.com");
+                options.ExcludedHosts.Add("www.example.com");
+            });
+            return services;
+        }
     }
 }
