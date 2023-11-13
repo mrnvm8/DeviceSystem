@@ -9,7 +9,7 @@ It is a Device System for Managing Devices. It uses the MySql database to store 
 
 **Requirements for the project**
 
-- MySql Server
+- MySql Server 8.0
 - ASP.NET dotnet 6.0
 	-dotnet ef
 - VSCode or Any Editor you Prefer
