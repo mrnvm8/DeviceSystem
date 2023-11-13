@@ -23,25 +23,25 @@ dotnet ef database update --this will create the database
 on this Github the is a project to create a User Login just by running dotnet run command but first
 
 Download this DeviceSystemInitializer project.
---The are few changes you need to do.
+--The are a few changes you need to make.
 1. ApplicationDbContext.cs from Data Folder
-	- change this to match you Database settings
+	- change this to match your Database settings
 	**server=localhost;user=user1;password=xxxxxx;database=SystemDB**
 	
 2. Users.cs from Model folder 
-	-change the string password to you likes
-	** CreatePasswordHash("xxxxxxxx", out byte[] passwordHash, out byte[] passwordSalt);**
+	-change the string password to what you like
+	** CreatePasswordHash("xxxxxxxx", out byte[] passwordHash, out byte[] passwordSalt)**
 Now good to go => dotnet run.
 
 **Uses**
-Notice this project was saving user secret using microsoft secret manager.
+Notice this project was saving user secrets using Microsoft Secret Manager.
 so you will have to create your own secret. for the database and email address
-for the email address only when creating a ticket it will be required other wise the other operation will work fine
+Email address secrets are required when creating a ticket for a device, otherwise, the other operation will work fine
 
-Database secret structure
+**Database secret structure**
 
 
-The project works like this you
+**Now back to this Project The project works like this you**
 1. Add as Person --- People Table
 	1.1 Add Office -- Offices Table
 	1.2 Add Department --Department Tables
@@ -55,7 +55,7 @@ After having Login,
 -- Assign/Unassign device to employees
 -- Can create Ticket for device -- it's will send email
 	uses (https://github.com/jstedfast/MailKit)
--- Can Upate the Ticket as Admin.
+-- Can Update the Ticket as Admin.
 
 Admin
 --Can Acknowledge/Achieve ticket
