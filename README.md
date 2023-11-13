@@ -20,7 +20,7 @@ After downloading the project run the following command inside the project
 
 dotnet ef database update --this will create the database
 
-on this Github the is a project to create a User Login just by running dotnet run command but first
+on this Github the is a project to create a User Login just by running the dotnet run command but first
 
 Download this DeviceSystemInitializer project.
 --The are a few changes you need to make.
@@ -39,7 +39,15 @@ so you will have to create your own secret. for the database and email address
 Email address secrets are required when creating a ticket for a device, otherwise, the other operation will work fine
 
 **Database secret structure**
+MySQLSettings:User = localhost
+MySQLSettings:Server = user1
+MySQLSettings:Password = ********
+MySQLSettings:Database = SystemDB
 
+**Email secret structure**
+EmailUsername = user@gmail.com
+EmailPassword = ********
+EmailHost = smtp.gmail.com
 
 **Now back to this Project The project works like this you**
 1. Add as Person --- People Table
@@ -57,6 +65,6 @@ After having Login,
 	uses (https://github.com/jstedfast/MailKit)
 -- Can Update the Ticket as Admin.
 
-Admin
+**Admin**
 --Can Acknowledge/Achieve ticket
 --Can Do CRUD Operation on all the tablets
