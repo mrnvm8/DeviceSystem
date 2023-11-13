@@ -28,8 +28,8 @@ After having Login,
 -- Assign/Unassign device to employees
 -- Can create Ticket for device -- it's will send email
 	uses (https://github.com/jstedfast/MailKit)
--- Can Upate the Ticket as Admin.
+-- Can Update the Ticket as Admin.
 
 Admin
---Can Acknowledge/Aechive ticket
---Can Do CRUD Operation to all the tablets
+--Can Acknowledge/Achieve ticket
+--Can Do CRUD Operation on all the tablets
