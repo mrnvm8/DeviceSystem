@@ -15,12 +15,11 @@ It is a Device System for Managing Devices. It uses the MySql database to store 
 - VSCode or Any Editor you Prefer
 
 **Before Anything**
-
 After downloading the project run the following command inside the project 
+**dotnet ef database update** --this will create the database
 
-dotnet ef database update --this will create the database
-
-on this Github the is a project to create a User Login just by running the dotnet run command but first
+**Making things Easy**
+On this Github the is a project to create a User Login just by running the **dotnet run** command but first
 
 Download this DeviceSystemInitializer project.
 --The are a few changes you need to make.
@@ -33,18 +32,23 @@ Download this DeviceSystemInitializer project.
 	** CreatePasswordHash("xxxxxxxx", out byte[] passwordHash, out byte[] passwordSalt)**
 Now good to go => dotnet run.
 
-**Uses**
+**Now Back to this project**
+
 Notice this project was saving user secrets using Microsoft Secret Manager.
 so you will have to create your own secret. for the database and email address
 Email address secrets are required when creating a ticket for a device, otherwise, the other operation will work fine
 
+**dotnet user-secrets list** for seeing secrets.
+
 **Database secret structure**
-MySQLSettings:User = localhost
+
+MySQLSettings:User = root
 MySQLSettings:Server = user1
 MySQLSettings:Password = ********
 MySQLSettings:Database = SystemDB
 
 **Email secret structure**
+
 EmailUsername = user@gmail.com
 EmailPassword = ********
 EmailHost = smtp.gmail.com
